@@ -1,4 +1,5 @@
 import * as axios from "axios";
+import {BASE_API_URL} from "../../config"
 
 export const onBarcodeChange = (value) => {return {
     type: "INPUT_BARANG_FORM_ON_BARCODE_CHANGE",
@@ -29,7 +30,7 @@ export const onSubmit = () => {return (dispatch, getState) => {
     let nama = getState().inputBarangForm.nama;
     
     if(barcode && nama){
-        axios.post("http://localhost:8080/barang", {
+        axios.post(`${BASE_API_URL}/barang`, {
             barcode: barcode,
             nama: nama,
             stock: 0

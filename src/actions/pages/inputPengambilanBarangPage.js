@@ -1,4 +1,5 @@
 import * as axios from "axios";
+import {BASE_API_URL} from "../../config"
 import {clear as clearTable} from "../tables/tableTransaksiBarang";
 import {clear as clearDetailPengambilan} from "../forms/detailPengambilanBarangForm";
 
@@ -29,7 +30,7 @@ export const simpanPengambilanBarang = () => {return (dispatch, getState) => {
         if(isoDate === "Invalid date"){
             dispatch(showError("Pastikan tanggal sudah benar"))
         }else{
-            axios.post("http://localhost:8080/pengambilan_barang", data).then(response => {
+            axios.post(`${BASE_API_URL}/pengambilan_barang`, data).then(response => {
                 dispatch(clearTable())
                 dispatch(clearDetailPengambilan())
                 dispatch(saved())

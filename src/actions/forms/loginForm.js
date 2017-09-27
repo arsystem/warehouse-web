@@ -1,4 +1,5 @@
 import * as axios from "axios"
+import {BASE_API_URL} from "../../config"
 
 import {updateLoggedIn} from "../global";
 
@@ -26,7 +27,7 @@ export const onSubmit = () => {return (dispatch, getState) => {
     let username = getState().loginForm.username;
     let password = getState().loginForm.password;
 
-    axios.post("http://localhost:8080/login", {
+    axios.post(`${BASE_API_URL}/login`, {
         id: username,
         password: password
     }).then(response => {

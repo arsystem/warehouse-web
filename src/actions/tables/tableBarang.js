@@ -1,4 +1,5 @@
 import * as axios from "axios";
+import {BASE_API_URL} from "../../config"
 
 export const loading = () => {return {
     type: "TABLE_BARANG_LOADING"
@@ -11,7 +12,7 @@ export const fetched = (listBarang) => {return {
 
 export const fetchBarang = () => {return dispatch => {
     dispatch(loading())
-    axios.get("http://localhost:8080/barang").then(response => {
+    axios.get(`${BASE_API_URL}/barang`).then(response => {
         let listBarang = []
         response.data.data.map(value => {
             listBarang.push(value)

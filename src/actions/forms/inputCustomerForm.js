@@ -1,4 +1,5 @@
 import * as axios from "axios";
+import {BASE_API_URL} from "../../config"
 
 export const onIdChange = (value) => {return {
     type: "INPUT_CUSTOMER_FORM_ON_ID_CHANGE",
@@ -21,7 +22,7 @@ export const onSubmit = () => {return (dispatch, getState) => {
     let nama = getState().inputCustomerForm.nama
 
     if(id && nama){
-        axios.post("http://localhost:8080/customer", {
+        axios.post(`${BASE_API_URL}/customer`, {
             id: id,
             nama: nama
         }).then(response => {

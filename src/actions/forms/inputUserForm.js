@@ -1,4 +1,5 @@
 import * as axios from "axios";
+import {BASE_API_URL} from "../../config"
 
 export const onIdChange = (value) => {return {
     type: "INPUT_USER_FORM_ON_ID_CHANGE",
@@ -27,7 +28,7 @@ export const onSubmit = () => {return (dispatch, getState) => {
     let password = getState().inputUserForm.password;
 
     if(id && nama && password){
-        axios.post("http://localhost:8080/user", {
+        axios.post(`${BASE_API_URL}/user`, {
             id: id,
             nama: nama,
             password: password
