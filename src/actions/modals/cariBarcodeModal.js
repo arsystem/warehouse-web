@@ -1,4 +1,5 @@
 import * as axios from "axios";
+import {BASE_API_URL} from "../../config"
 
 import {loading as tableLoading, fetched as tableLoaded} from "../tables/tableBarang";
 
@@ -20,7 +21,7 @@ export const onSubmit = () => {return (dispatch, getState) => {
 
     dispatch(hide())
     dispatch(tableLoading())
-    axios.get("http://localhost:8080/barang", {params: {
+    axios.get(`${BASE_API_URL}/barang`, {params: {
         barcode: barcode
     }}).then(response => {
         let listBarang = []

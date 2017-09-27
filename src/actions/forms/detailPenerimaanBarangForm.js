@@ -1,4 +1,5 @@
 import * as axios from "axios"
+import {BASE_API_URL} from "../../config"
 
 export const clear =  () => {return {type: "DETAIL_PENERIMAAN_BARANG_FORM_CLEAR"}}
 export const onTanggalPenerimaanChange = (value) => {return {
@@ -22,7 +23,7 @@ const fetchedSuplier = (suplier) => {return {
 }}
 export const fetchSuplier = (value) => {return (dispatch, getState) => {
     let suplierId = getState().detailPenerimaanBarangForm.suplier.id
-    axios.get(`http://localhost:8080/suplier/${suplierId}`).then(response => {
+    axios.get(`${BASE_API_URL}/suplier/${suplierId}`).then(response => {
         dispatch(fetchedSuplier(response.data.data))
     })
 }}
@@ -33,7 +34,7 @@ const fetchedChecker = (checker) => {return {
 }}
 export const fetchChecker = (value) => {return (dispatchEvent, getState) => {
     let checkerId = getState().detailPenerimaanBarangForm.checker.id;
-    axios.get(`http://localhost:8080/user/${checkerId}`).then(response => {
+    axios.get(`${BASE_API_URL}/user/${checkerId}`).then(response => {
         dispatchEvent(fetchedChecker(response.data.data))
     })
 }}

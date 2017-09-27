@@ -1,4 +1,5 @@
 import * as axios from "axios";
+import {BASE_API_URL} from "../../config"
 import {addBarang as addTableTransaksiBarang} from "../tables/tableTransaksiBarang"
 
 export const show = () => {return {
@@ -31,7 +32,7 @@ const showError = () => {return {
 export const searchBarang = () => {return (dispatch, getState) => {
     let searchBarcode = getState().tambahTransaksiBarangModal.searchBarcode;
 
-    axios.get(`http://localhost:8080/barang/${searchBarcode}`).then(response => {
+    axios.get(`${BASE_API_URL}/barang/${searchBarcode}`).then(response => {
         if(!window.$.isEmptyObject(response.data.data)){
             dispatch(foundBarang(response.data.data))
         }else{

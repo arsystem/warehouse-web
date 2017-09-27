@@ -1,4 +1,5 @@
 import * as axios from "axios";
+import {BASE_API_URL} from "../../config"
 
 export const onNamaBarangChange = (value) => {return {
     type: "UBAH_BARANG_FORM_ON_NAMA_BARANG_CHANGE",
@@ -26,7 +27,7 @@ const fetched = (barcode, namaBarang) => {return {
 
 export const fetchBarang = (barcode) => {return dispatch => {
     dispatch(loading())
-    axios.get(`http://localhost:8080/barang/${barcode}`).then(response => {
+    axios.get(`${BASE_API_URL}/barang/${barcode}`).then(response => {
         let barcode = response.data.data.barcode
         let namaBarang = response.data.data.nama
         dispatch(fetched(barcode, namaBarang))
@@ -39,7 +40,7 @@ export const onSubmit = () => {return (dispatch, getState) => {
     let barcode = getState().ubahBarangForm.barcode
     let namaBarang = getState().ubahBarangForm.namaBarang
 
-    axios.put(`http://localhost:8080/barang/${barcode}`, {
+    axios.put(`${BASE_API_URL}/barang/${barcode}`, {
         barcode: barcode,
         nama: namaBarang
     }).then(response => {
