@@ -8,6 +8,7 @@ import DetailPenerimaanBarangForm from "../../containers/forms/DetailPenerimaanB
 
 class InputPenerimaanBarangPage extends Component{
     componentDidMount(){
+        this.props.clearTableTransaksiBarang()
         window.$(document).keydown(e => {
             if(e.keyCode === 112){
                 e.preventDefault()
@@ -62,6 +63,7 @@ class InputPenerimaanBarangPage extends Component{
 }
 InputPenerimaanBarangPage.propTypes ={
     onTambahBarangClick: PropTypes.func.isRequired,
-    onSimpanPenerimaanClick: PropTypes.func.isRequired
+    onSimpanPenerimaanClick: PropTypes.func.isRequired,
+    clearTableTransaksiBarang: PropTypes.func.isRequired
 }
 export default InputPenerimaanBarangPage;
