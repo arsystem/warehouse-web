@@ -28,6 +28,13 @@ class InputPengambilanBarangPage extends Component{
                 placement: {align: "center"}
             })
         }
+        if(this.props.isSuccess){
+            window.$.notify({message: "Berhasil entri data."}, {
+                type: "success",
+                delay: 1000,
+                placement: {align: "center"}
+            })
+        }
     }
     
     componentWillUnmount(){

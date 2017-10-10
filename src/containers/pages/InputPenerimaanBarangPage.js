@@ -9,6 +9,7 @@ import InputPenerimaanBarangPage from "../../components/pages/InputPenerimaanBar
 const mapStateToProps = (state) => {return {
     isSaving: state.inputPenerimaanBarangPage.isSaving,
     isError: state.inputPenerimaanBarangPage.isError,
+    isSuccess: state. inputPenerimaanBarangPage.isSuccess,
     errorMessage: state.inputPenerimaanBarangPage.errorMessage
 }}
 

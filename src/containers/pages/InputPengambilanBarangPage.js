@@ -9,6 +9,7 @@ import InputPengambilanBarangPage from "../../components/pages/InputPengambilanB
 const mapStateToProps = (state) => {return {
     isSaving: state.inputPengambilanBarangPage.isSaving,
     isError: state.inputPengambilanBarangPage.isError,
+    isSuccess: state.inputPengambilanBarangPage.isSuccess,
     errorMessage: state.inputPengambilanBarangPage.errorMessage
 }}
 
