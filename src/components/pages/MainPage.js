@@ -17,6 +17,7 @@ import InputPengambilanBarangPage from "../../containers/pages/InputPengambilanB
 
 import DetailBarangPage from "./DetailBarangPage";
 import DetailPenerimaanBarangPage from "../../containers/pages/DetailPenerimaanBarangPage";
+import DetailPengambilanBarangPage from "../../containers/pages/DetailPengambilanBarangPage";
 
 import LihatBarangPage from "../../containers/pages/LihatBarangPage";
 import LihatSuplierPage from "./LihatSuplierPage";
@@ -89,6 +90,7 @@ class MainPage extends Component{
 
                     <Route exact path="/pengambilan_barang" component={LihatPengambilanBarangPage}/>
                     <Route exact path="/pengambilan_barang/input" component={InputPengambilanBarangPage}/>
+                    <Route exact path="/pengambilan_barang/view/:id" component={DetailPengambilanBarangPage}/>
                 </div>
             </section>
         </section>
