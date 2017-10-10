@@ -58,7 +58,6 @@ class TableTransaksiBarang extends Component{
 TableTransaksiBarang.propTypes = {
     canDelete: PropTypes.bool.isRequired,
     deleteEntry: PropTypes.func.isRequired,
-    clearListBarang: PropTypes.func.isRequired,
     deleteEntry: PropTypes.func
 }
 TableTransaksiBarang.defaultProps = {
