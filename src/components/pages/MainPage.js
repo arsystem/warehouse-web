@@ -23,6 +23,7 @@ import LihatSuplierPage from "./LihatSuplierPage";
 import LihatUserPage from "./LihatUserPage";
 import LihatCustomerPage from "./LihatCustomerPage";
 import LihatPenerimaanBarangPage from "../../containers/pages/LihatPenerimaanBarangPage";
+import LihatPengambilanBarangPage from "../../containers/pages/LihatPengambilanBarangPage";
 
 class MainPage extends Component{
     componentWillMount(){
@@ -51,6 +52,7 @@ class MainPage extends Component{
                         <LeftMenuItem title="Input Penerimaan Barang" link="/penerimaan_barang/input"/>
                     </LeftMenuItemWithSubmenu>
                     <LeftMenuItemWithSubmenu title="Pengambilan Barang" icon="icmn-upload2">
+                        <LeftMenuItem title="Lihat Pengambilan Barang" link="/pengambilan_barang"/>
                         <LeftMenuItem title="Input Pengambilan Barang" link="/pengambilan_barang/input"/>
                     </LeftMenuItemWithSubmenu>
                     <LeftMenuItemWithSubmenu title="User" icon="icmn-users">
@@ -85,6 +87,7 @@ class MainPage extends Component{
                     <Route exact path="/penerimaan_barang/input" component={InputPenerimaanBarangPage}/>
                     <Route exact path="/penerimaan_barang/view/:id" component={DetailPenerimaanBarangPage}/>
 
+                    <Route exact path="/pengambilan_barang" component={LihatPengambilanBarangPage}/>
                     <Route exact path="/pengambilan_barang/input" component={InputPengambilanBarangPage}/>
                 </div>
             </section>
