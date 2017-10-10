@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import {Link} from "react-router-dom";
 import Spinner from "react-spinner";
+import NumberFormat from "react-number-format";
 
 class TableBarang extends Component{
     componentDidMount(){
@@ -25,7 +26,9 @@ class TableBarang extends Component{
                         return (<tr key={index}>
                             <td style={{verticalAlign: "middle"}}>{value.barcode}</td>
                             <td style={{verticalAlign: "middle"}}>{value.nama}</td>
-                            <td style={{verticalAlign: "middle"}}>{value.stock}</td>
+                            <td style={{verticalAlign: "middle"}}>
+                                <NumberFormat value={value.stock} displayType={'text'} thousandSeparator={true} />
+                            </td>
                             <td className="pull-right">
                                 <Link to={`/barang/view/${value.barcode}`} className="btn btn-icon btn-primary margin-inline">
                                     <i className="icmn-pencil" aria-hidden="true"></i>
