@@ -10,6 +10,7 @@ import tableTransaksiBarang from "./tables/tableTransaksiBarang";
 import tableUser from "./tables/tableUser";
 import tableCustomer from "./tables/tableCustomer";
 import tablePenerimaanBarang from "./tables/tablePenerimaanBarang";
+import tablePengambilanBarang from "./tables/tablePengambilanBarang";
 import cariNamaBarangModal from "./modals/cariNamaBarangModal";
 import cariBarcodeModal from "./modals/cariBarcodeModal";
 import tambahTransaksiBarangModal from "./modals/tambahTransaksiBarangModal";
@@ -34,6 +35,7 @@ export default combineReducers({
     tableUser,
     tableCustomer,
     tablePenerimaanBarang,
+    tablePengambilanBarang,
     cariNamaBarangModal,
     cariBarcodeModal,
     tambahTransaksiBarangModal,
