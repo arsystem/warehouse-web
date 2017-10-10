@@ -1,8 +1,10 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 
 import TablePenerimaanBarang from "../../containers/tables/TablePenerimaanBarang"
+import DateRangeForm from "../../containers/forms/DateRangeForm";
 
-class LihatPenerimaanbarangPage extends Component{
+class LihatPenerimaanBarangPage extends Component{
     render(){return (
         <section>
             <nav className="top-submenu top-submenu-with-background">
@@ -12,7 +14,7 @@ class LihatPenerimaanbarangPage extends Component{
                 </ul>
             </nav>
             <div className="col-lg-12">
-                <h3>Bulan {window.moment().format("MMMM")}</h3>
+                <DateRangeForm onSubmit={this.props.onCariSubmit}/>
             </div>
             <div className="col-lg-12">
                 <div className="panel">
@@ -24,4 +26,10 @@ class LihatPenerimaanbarangPage extends Component{
         </section>
     )}
 }
-export default LihatPenerimaanbarangPage
+LihatPenerimaanBarangPage.propTypes = {
+    onCariSubmit: PropTypes.func.isRequired
+}
+LihatPenerimaanBarangPage.defaultProps = {
+    onCariSubmit: () => {}
+}
+export default LihatPenerimaanBarangPage

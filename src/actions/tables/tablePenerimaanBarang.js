@@ -6,15 +6,19 @@ const fetched = (listPenerimaanBarang) => {return {
     type: "TABLE_PENERIMAAN_BARANG_FETCHED",
     listPenerimaanBarang: listPenerimaanBarang
 }}
-export const fetchPenerimaanBarang = () => {return (dispatch, getState) => {
+export const fetchPenerimaanBarang = (mulaiTanggal, sampaiTanggal) => {return (dispatch, getState) => {
     dispatch(loading())
 
-    let mulai_tanggal = window.moment().startOf("year").toISOString()
-    let sampai_tanggal = window.moment().endOf("year").toISOString()
+    if(mulaiTanggal === null || mulaiTanggal === undefined){
+        mulaiTanggal = window.moment().startOf("year").toISOString()
+    }
+    if(sampaiTanggal === null || sampaiTanggal === undefined){
+        sampaiTanggal = window.moment().endOf("year").toISOString()
+    }
     
     axios.get(`${BASE_API_URL}/penerimaan_barang`, {params: {
-        start_tanggal_terima: mulai_tanggal,
-        end_tanggal_terima: sampai_tanggal
+        start_tanggal_terima: mulaiTanggal,
+        end_tanggal_terima: sampaiTanggal
     }}).then(response => {
         let promises = []
         response.data.data.forEach(item => {

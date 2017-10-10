@@ -21,6 +21,7 @@ import inputUserForm from "./forms/inputUserForm";
 import inputCustomerForm from "./forms/inputCustomerForm";
 import detailPenerimaanBarangForm from "./forms/detailPenerimaanBarangForm";
 import detailPengambilanBarangForm from "./forms/detailPengambilanBarangForm";
+import dateRangeForm from "./forms/dateRangeForm";
 
 export default combineReducers({
     global,
@@ -43,5 +44,6 @@ export default combineReducers({
     inputUserForm,
     inputCustomerForm,
     detailPenerimaanBarangForm,
-    detailPengambilanBarangForm
+    detailPengambilanBarangForm,
+    dateRangeForm
 })

@@ -22,7 +22,7 @@ import LihatBarangPage from "../../containers/pages/LihatBarangPage";
 import LihatSuplierPage from "./LihatSuplierPage";
 import LihatUserPage from "./LihatUserPage";
 import LihatCustomerPage from "./LihatCustomerPage";
-import LihatPenerimaanBarangPage from "./LihatPenerimaanBarangPage";
+import LihatPenerimaanBarangPage from "../../containers/pages/LihatPenerimaanBarangPage";
 
 class MainPage extends Component{
     componentWillMount(){
