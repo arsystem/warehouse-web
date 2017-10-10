@@ -16,11 +16,13 @@ import InputPenerimaanBarangPage from "../../containers/pages/InputPenerimaanBar
 import InputPengambilanBarangPage from "../../containers/pages/InputPengambilanBarangPage";
 
 import DetailBarangPage from "./DetailBarangPage";
+import DetailPenerimaanBarangPage from "../../containers/pages/DetailPenerimaanBarangPage";
 
 import LihatBarangPage from "../../containers/pages/LihatBarangPage";
 import LihatSuplierPage from "./LihatSuplierPage";
 import LihatUserPage from "./LihatUserPage";
 import LihatCustomerPage from "./LihatCustomerPage";
+import LihatPenerimaanBarangPage from "../../containers/pages/LihatPenerimaanBarangPage";
 
 class MainPage extends Component{
     componentWillMount(){
@@ -45,6 +47,7 @@ class MainPage extends Component{
                         <LeftMenuItem title="Input Customer" link="/customer/input"/>
                     </LeftMenuItemWithSubmenu>
                     <LeftMenuItemWithSubmenu title="Penerimaan Barang" icon="icmn-download2">
+                        <LeftMenuItem title="Lihat Penerimaan Barang" link="/penerimaan_barang"/>
                         <LeftMenuItem title="Input Penerimaan Barang" link="/penerimaan_barang/input"/>
                     </LeftMenuItemWithSubmenu>
                     <LeftMenuItemWithSubmenu title="Pengambilan Barang" icon="icmn-upload2">
@@ -78,7 +81,9 @@ class MainPage extends Component{
                     <Route exact path="/user" component={LihatUserPage}/>
                     <Route exact path="/user/input" component={InputUserPage}/>
 
+                    <Route exact path="/penerimaan_barang" component={LihatPenerimaanBarangPage}/>
                     <Route exact path="/penerimaan_barang/input" component={InputPenerimaanBarangPage}/>
+                    <Route exact path="/penerimaan_barang/view/:id" component={DetailPenerimaanBarangPage}/>
 
                     <Route exact path="/pengambilan_barang/input" component={InputPengambilanBarangPage}/>
                 </div>

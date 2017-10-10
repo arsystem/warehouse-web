@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {return {
 }}
 
 const mapDispatchToPros = (dispatch) => {return {
-    deleteEntry: (index) => {dispatch(deleteBarang(index))}
+    deleteEntry: (index) => {dispatch(deleteBarang(index))},
 }}
 
 export default withRouter(connect(mapStateToProps, mapDispatchToPros)(TableTransaksiBarang));

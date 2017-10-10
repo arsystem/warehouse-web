@@ -3,6 +3,7 @@ import {withRouter} from "react-router-dom";
 
 import {show as showTambahBarang} from "../../actions/modals/tambahTransaksiBarangModal";
 import {simpanPengambilanBarang} from "../../actions/pages/inputPengambilanBarangPage";
+import {clear as clearTableTransaksiBarang} from "../../actions/tables/tableTransaksiBarang";
 import InputPengambilanBarangPage from "../../components/pages/InputPengambilanBarangPage";
 
 const mapStateToProps = (state) => {return {
@@ -13,7 +14,8 @@ const mapStateToProps = (state) => {return {
 
 const mapDispatchToPros = (dispatch) => {return {
     onTambahBarangClick: () => {dispatch(showTambahBarang())},
-    onSimpanPengambilanClick: () => {dispatch(simpanPengambilanBarang())}
+    onSimpanPengambilanClick: () => {dispatch(simpanPengambilanBarang())},
+    clearTableTransaksiBarang: () => {dispatch(clearTableTransaksiBarang())}
 }}
 
 export default withRouter(connect(mapStateToProps, mapDispatchToPros)(InputPengambilanBarangPage));
