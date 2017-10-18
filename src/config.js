@@ -1,1 +1,1 @@
-export const BASE_API_URL = "http://35.198.255.213:8080"
+export const BASE_API_URL = "http://api.gudang.tokosumatra.com"
